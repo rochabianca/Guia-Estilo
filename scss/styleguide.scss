@@ -1,0 +1,160 @@
+//Variáveis
+
+//Cores
+$cor-primaria-1: ;
+$cor-primaria-2: ;
+$cor-primaria-3: ;
+
+$cor-secundaria-1: ; //por padrão preto
+$cor-secundaria-2: ;  //por padrão branco
+$cor-secundaria-3: ;
+
+$cor-qualquer: ;
+
+//Tipografia
+$tipografia-1: ;
+$tipografia-2: ;
+
+//Tamanho das fontes
+$tamanho-1: ;
+$tamanho-2: ;
+$tamanho-3: ;
+
+$tamanho-qualquer: 18px;
+
+@mixin font-size($size) {
+  @if $size == $tamanho-1 {
+    font-size: $tamanho-1 + px;
+    line-height: $tamanho-1*1.4 + px;
+  }
+  @else if $size == $tamanho-2 {
+    font-size: $tamanho-2 + px;
+    line-height: $tamanho-2*1.4 + px;
+  }
+  @else if $size == $tamanho-3 {
+    font-size: $tamanho-3 + px;
+    line-height: $tamanho-3*1.4 + px;
+  }
+}
+
+/* Cores */
+.primaria-1 {
+	background: $cor-primaria-1;
+}
+.primaria-2 {
+	background: $cor-primaria-2;
+}
+.primaria-3 {
+  background: $cor-primaria-3;
+}
+.secundaria-1 {
+	background: $cor-secundaria-1;
+}
+.secundaria-2 {
+	background: $cor-secundaria-2;
+}
+.secundaria-3 {
+	background: $cor-secundaria-3;
+}
+/* Tipografia */
+.titulo-1 {
+	font-family: $tipografia-1;
+  @include font-size($tamanho-3);
+  text-transform: uppercase;
+  font-weight: bold;
+	color: $cor-primaria-2;
+}
+.titulo-2 {
+	font-family: $tipografia-1;
+	@include font-size($tamanho-2);
+  text-transform: uppercase;
+  font-weight: bold;
+	color: $cor-primaria-2;
+}
+.corpo-1 p {
+	font-family: $tipografia-2;
+	@include font-size($tamanho-1);
+	margin-bottom: $tamanho-qualquer;
+	color: $cor-secundaria-1;
+}
+.corpo-2 p {
+	font-family: $tipografia-2;
+	@include font-size($tamanho-1);
+	margin-bottom: $tamanho-qualquer;
+	color: $cor-secundaria-1;
+}
+/* Botões e Links */
+.btn-primario a {
+	font-family: $tipografia-1;
+  @include font-size($tamanho-2);
+	display: inline-block;
+	background: $cor-primaria-1;
+	color: $cor-secundaria-2;
+	text-align: center;
+	padding: $tamanho-qualquer;
+	border: $tamanho-qualquer;
+}
+.btn-primario a:hover {
+	background: $cor-primaria-2;
+	color: $cor-secundaria-2;
+}
+.btn-secundario a {
+	font-family: $tipografia-1;
+	@include font-size($tamanho-2);
+	display: inline-block;
+	background: $cor-primaria-2;
+	color: $cor-secundaria-2;
+	text-align: center;
+	padding: $tamanho-qualquer;
+	border: $tamanho-qualquer;
+}
+.btn-secundario a:hover {
+	background: $cor-primaria-1;
+	color: $cor-secundaria-2;
+}
+.link a {
+	font-family: $tipografia-1;
+	color: blue;
+}
+.link a:hover {
+	text-decoration: underline;
+}
+/* Formulário */
+label {
+	display: block;
+	font-family: $tipografia-1;
+	margin-bottom: $tamanho-qualquer;
+	color: $cor-qualquer;
+}
+input, textarea {
+	font-family: $tipografia-2;
+  @include font-size($tamanho-2);
+	padding: 10px 10px;
+	background: transparent; 
+	border: 3px solid $cor-primaria-1;
+	margin-bottom: $tamanho-qualquer;
+	width: 480px;
+	box-sizing: border-box;
+}
+textarea {
+	min-height: 10px;
+}
+input:focus, input:hover, textarea:focus, textarea:hover {
+	outline: $tamanho-qualquer;
+	border-color: blue;
+}
+button {
+	font-family: $tipografia-1;
+  @include font-size($tamanho-2);
+	display: inline-block;
+	background: $cor-primaria-1;
+	color: $cor-secundaria-2;
+	text-align: center;
+	padding: $tamanho-qualquer;
+	border: $tamanho-qualquer;
+	cursor: pointer;
+}
+button:hover {
+	background: $cor-primaria-2;
+	color: $cor-secundaria-2;
+}
